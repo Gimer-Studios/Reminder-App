@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #009966;
+}
+
+#reminder-list {
+    margin-top: 20px;
+}
