@@ -1,13 +1,190 @@
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Include color transition */
+    color: #009966; /* Set default text color */
+    background-color: #f0f0f0; /* Set initial background color */
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #111; /* Set dark mode background color */
+    color: #009966; /* Set dark mode text color */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 h1 {
     color: #009966;
+    margin: 0;
 }
 
-#reminder-list {
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    color: #555;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #009966;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-container input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #333; /* Set text color */
+    transition: color 0.3s ease; /* Include color transition */
+}
+
+.input-container button {
+    padding: 8px 20px;
+    background-color: #009966;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #007d5d;
+}
+
+.reminder-list {
     margin-top: 20px;
-    color: #009966;
+    color: inherit;
+}
+
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.reminder-item button {
+    padding: 6px 12px;
+    background-color: #009966;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reminder-item button:hover {
+    background-color: #007d5d;
+}
+
+.dark-theme {
+    background-color: #111;
+    color: #fff;
+}
+
+.dark-theme .content {
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .input-container input[type="text"],
+.dark-theme .input-container button {
+    background-color: #333;
+    border-color: #333;
+    color: #fff; /* Set text color */
+}
+
+.dark-theme .reminder-item {
+    border-color: #444;
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none; /* Prevent dots from interfering with mouse events */
+    background-color: #009966; /* Default dot color */
+}
+
+/* Dark mode styles */
+body.dark-theme .dot {
+    background-color: #ccc; /* Set dark mode dot color */
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
 }
