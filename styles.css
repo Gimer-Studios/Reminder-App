@@ -173,7 +173,7 @@ input:checked + .slider:before {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    pointer-events: none; /* Prevent dots from interfering with mouse events */
+    pointer-events: none;
     background-color: #009966; /* Default dot color */
 }
 
